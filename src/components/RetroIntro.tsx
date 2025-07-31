@@ -11,7 +11,7 @@ export default function RetroIntro() {
 
   const startSystem = () => {
     setHasStarted(true);
-    const bootSound = new Audio("/sfx/bootup.mp3");
+    const bootSound = new Audio("./sfx/bootup.mp3");
     bootSound
       .play()
       .catch((err) => console.warn("Autoplay error:", err.message));

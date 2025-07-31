@@ -24,7 +24,7 @@ export default function DiagonalSprite({ children }: DiagonalBackgroundProps) {
       <div
         className="absolute inset-0 pointer-events-none z-0"
         style={{
-          backgroundImage: "url(/static/sprite.gif)", // your animated gif
+          backgroundImage: "url(./static/sprite.gif)", // your animated gif
           backgroundRepeat: "repeat",
           backgroundSize: "200px 200px", // adjust for your gif size
           backgroundPosition: `${offset.x}px ${offset.y}px`,

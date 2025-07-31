@@ -12,7 +12,7 @@ export default function Files({
   return (
     <WindowFrame title="Files" onClose={onClose}>
       <IconButton
-        icon="/static/icons/97Doc.png"
+        icon="./static/icons/97Doc.png"
         label="Resume"
         onClick={() => onLaunch("resume")}
       />

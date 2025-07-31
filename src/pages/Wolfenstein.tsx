@@ -7,7 +7,7 @@ export default function Wolfenstein({ onClose }: { onClose: () => void }) {
     if (!window.Dos || !containerRef.current) return;
 
     const emulator = window.Dos(containerRef.current, {
-      url: "/WOLF3D.jsdos",
+      url: "./WOLF3D.jsdos",
     });
 
     return () => {
