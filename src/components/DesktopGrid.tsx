@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { WindowFrame } from "./WindowFrame";
 import WindowLayout from "./WindowLayout";
 import Clock from "../pages/Clock";
 import Files from "../pages/Files";

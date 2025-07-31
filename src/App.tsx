@@ -22,10 +22,13 @@ function App() {
               </DiagonalSprite>
             }
           />
-          <Route path="/files" element={<Files />} />
-          <Route path="/clock" element={<Clock />} />
-          <Route path="/notes" element={<Notes />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route
+            path="/files"
+            element={<Files onClose={() => null} onLaunch={() => null} />}
+          />
+          <Route path="/clock" element={<Clock onClose={() => null} />} />
+          <Route path="/notes" element={<Notes onClose={() => null} />} />
+          <Route path="/resume" element={<Resume onClose={() => null} />} />
         </Routes>
       </Router>
     </>

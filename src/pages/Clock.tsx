@@ -1,5 +1,5 @@
 // src/pages/Clock.tsx
-import { useState } from "react";
+
 import { WindowFrame } from "../components/WindowFrame";
 import RetroClock from "../components/RetroClock";
 

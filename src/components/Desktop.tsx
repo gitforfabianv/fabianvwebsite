@@ -4,10 +4,12 @@ import DesktopGrid from "./DesktopGrid";
 import IconLayer from "./IconLayer";
 
 interface DesktopProps {
-  mousePos: { x: number; y: number };
+  className?: string;
+
+  //mousePos: { x: number; y: number };
 }
 
-export default function Desktop({ mousePos }: DesktopProps) {
+export default function Desktop({}: DesktopProps) {
   const { openWindows, open, close } = useWindowManager();
 
   return (
