@@ -36,6 +36,21 @@
         cursor: url("/fabianvwebsite/static/cursor.png"), auto;
         font-family: "Press Start 2P", monospace;
       }
+      /* Default body styles for all devices */
+      body {
+        box-sizing: border-box;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Mobile-specific styles */
+      @media (max-width: 768px) {
+        body {
+          --nav-padding: calc(var(--nav-height, 4rem) + env(safe-area-inset-top, 0));
+          padding-top: var(--nav-padding); /* Shrink content from top */
+          padding-bottom: var(--nav-padding); /* Uncomment for symmetric shrinking */
+        }
+      }
     </style>
     <script type="module" crossorigin src="/fabianvwebsite/assets/index-9koqGOYG.js"></script>
     <link rel="stylesheet" crossorigin href="/fabianvwebsite/assets/index-RPBMmwqC.css">
