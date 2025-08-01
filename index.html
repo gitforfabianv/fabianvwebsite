@@ -47,61 +47,63 @@
     </style>
 
     <script>
-      (function () {
-        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  (function () {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
-        const style = document.createElement("style");
-        style.type = "text/css";
+    const style = document.createElement("style");
+    style.type = "text/css";
 
-        if (isSafari) {
-          // Safari-specific styles
-          style.textContent = `
-            @media not all and (min-resolution: 0.001dpcm) {
-              @supports (-webkit-appearance: none) {
-                body {
-                  padding-top: env(safe-area-inset-top);
-                  padding-bottom: env(safe-area-inset-bottom);
-                  padding-left: env(safe-area-inset-left);
-                  padding-right: env(safe-area-inset-right);
-                  -webkit-overflow-scrolling: touch;
-                }
-
-                #root {
-                  height: 100%;
-                  max-height: 100vh;
-                  overflow: hidden;
-                }
-              }
-            }
-          `;
-
-          // Fix Safari's 100vh issue
-          function setVHUnit() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
+    if (isSafari) {
+      // Safari-specific styles: use similar logic as Chrome, but adjusted for Safari quirks
+      style.textContent = `
+        @media (max-width: 768px) {
+          :root {
+            --nav-height: 4rem;
           }
 
-          window.addEventListener('resize', setVHUnit);
-          window.addEventListener('orientationchange', setVHUnit);
-          setVHUnit();
-        } else {
-          // Non-Safari mobile styles
-          style.textContent = `
-            @media (max-width: 768px) {
-              body {
-                --nav-padding: calc(var(--nav-height, 4rem) + env(safe-area-inset-top, 0));
-                padding-top: var(--nav-padding);
-                padding-bottom: var(--nav-padding);
-              }
-            }
-          `;
+          body {
+            --nav-padding: calc(var(--nav-height) + env(safe-area-inset-top, 0));
+            padding-top: var(--nav-padding);
+            padding-bottom: env(safe-area-inset-bottom, 0);
+            padding-left: env(safe-area-inset-left, 0);
+            padding-right: env(safe-area-inset-right, 0);
+            -webkit-overflow-scrolling: touch;
+          }
         }
+      `;
 
-        document.head.appendChild(style);
-      })();
-    </script>
+      // Safari viewport height fix
+      function setVHUnit() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
 
-    <script type="module" crossorigin src="/fabianvwebsite/assets/index-CcJsq2QF.js"></script>
+      window.addEventListener('resize', setVHUnit);
+      window.addEventListener('orientationchange', setVHUnit);
+      setVHUnit();
+    } else {
+      // Chrome and others — keep your original working layout
+      style.textContent = `
+        @media (max-width: 768px) {
+          :root {
+            --nav-height: 4rem;
+          }
+
+          body {
+            --nav-padding: calc(var(--nav-height) + env(safe-area-inset-top, 0));
+            padding-top: var(--nav-padding);
+            padding-bottom: var(--nav-padding);
+          }
+        }
+      `;
+    }
+
+    document.head.appendChild(style);
+  })();
+</script>
+
+
+    <script type="module" crossorigin src="/fabianvwebsite/assets/index-vpCvQzg4.js"></script>
     <link rel="stylesheet" crossorigin href="/fabianvwebsite/assets/index-B3mWdfle.css">
   </head>
   <body
