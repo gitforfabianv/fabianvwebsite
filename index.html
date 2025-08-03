@@ -22,11 +22,26 @@
       rel="stylesheet"
     />
 
+    <script>
+      function setFullViewportHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+
+      // Run on initial load
+      setFullViewportHeight();
+
+      // Update on resize and orientation change
+      window.addEventListener('resize', setFullViewportHeight);
+      window.addEventListener('orientationchange', setFullViewportHeight);
+
+    </script>
+
     <style>
       html,
       body,
       #root {
-        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         margin: 0;
         padding: 0;
         display: flex;
@@ -50,7 +65,7 @@
     <link rel="stylesheet" crossorigin href="/fabianvwebsite/assets/index-BFCS57gF.css">
   </head>
   <body
-    class="bg-diamond-scroll h-screen w-screen m-0 p-0 flex flex-col overflow-hidden items-center justify-center"
+    class="bg-diamond-scroll w-screen m-0 p-0 flex flex-col overflow-hidden items-center justify-center"
   >
     <div id="root" class="flex-grow flex flex-col">
   </body>
