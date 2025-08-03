@@ -33,21 +33,23 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        cursor: url("/fabianvwebsite/static/cursor.png"), auto;
+        cursor: url("./static/cursor.png"), auto;
         font-family: "Press Start 2P", monospace;
         background-color: rgb(4, 0, 57);
       }
       /* Default body styles for all devices */
       body {
+        contain-intrinsic-size: 100dvh;
+        min-height: 100vh;
+        height: 100dvh;
+        padding-bottom: env(safe-area-inset-bottom); /* For devices with notches/toolbars */
         box-sizing: border-box;
-        width: 100%;
-        overflow: hidden;
       }
 
     </style>
 
-    <script type="module" crossorigin src="/fabianvwebsite/assets/index-Bqr5ugFv.js"></script>
-    <link rel="stylesheet" crossorigin href="/fabianvwebsite/assets/index-DK2yBqCc.css">
+    <script type="module" crossorigin src="/fabianvwebsite/assets/index-fo9oLnsw.js"></script>
+    <link rel="stylesheet" crossorigin href="/fabianvwebsite/assets/index-BfPzbpql.css">
   </head>
   <body
     class="bg-diamond-scroll w-screen m-0 p-0 flex flex-col overflow-hidden items-center justify-center"
