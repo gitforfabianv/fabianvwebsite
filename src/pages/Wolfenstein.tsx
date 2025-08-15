@@ -16,7 +16,7 @@ export default function Wolfenstein({ onClose }: { onClose: () => void }) {
   }, []);
 
   return (
-    <div className="w-screen h-screen fixed top-0 left-0 z-50 pointer-events-auto">
+    <div className="w-full h-full fixed top-0 left-0 z-50 pointer-events-auto">
       {/* Close Button */}
       <button
         onClick={onClose}

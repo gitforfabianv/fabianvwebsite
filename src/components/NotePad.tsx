@@ -19,7 +19,7 @@ export default function NotePad() {
   }, [note]);
 
   return (
-    <div className="h-full bg-white text-black p-4 rounded shadow-md w-full max-w-xl mx-auto">
+    <div className="h-full w-full bg-white text-black">
       <textarea
         value={note}
         onChange={(e) => setNote(e.target.value)}
