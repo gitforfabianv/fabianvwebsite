@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Vite + React + TS</title>
+
+    <!-- js-dos style sheet -->
+    <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css" />
+
+    <!-- js-dos -->
+    <script src="/js/js-dos.js"></script>
+    <script src="/js/emulators.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      #root {
+        height: 100svh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: url("./static/cursor.png"), auto;
+        font-family: "Press Start 2P", monospace;
+        background-color: rgb(197, 193, 163);
+      }
+      /* Default body styles for all devices **
+      body {
+        contain-intrinsic-size: 100svh;
+        min-height: 100svh;
+        height: 100svh;
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom); /* For devices with notches/toolbars **
+                box-sizing: border-box;
+      }
+*/
+
+    </style>
+
+  </head>
+  <body
+    class="max-height-svh bg-diamond-scroll w-screen m-0 p-0 flex flex-col overflow-hidden items-center justify-center"
+  >
+    <div id="root" class="w-screen flex-grow flex flex-col items-center justify-center">
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
