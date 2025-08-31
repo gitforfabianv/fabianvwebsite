@@ -3,6 +3,7 @@ import MenuBar from "./MenuBar";
 import Footer from "./Footer";
 import DesktopGrid from "./DesktopGrid";
 import IconLayer from "./IconLayer";
+import Wolfenstein from "../pages/Wolfenstein";
 
 interface DesktopProps {
   className?: string;
@@ -26,6 +27,11 @@ export default function Desktop({}: DesktopProps) {
           />
         </div>
         <Footer />
+
+        {/* Emulator Layer */}
+        {openWindows.includes("wolfenstein") && (
+          <Wolfenstein onClose={() => close("wolfenstein")} />
+        )}
       </div>
     </>
   );

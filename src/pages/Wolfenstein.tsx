@@ -16,17 +16,21 @@ export default function Wolfenstein({ onClose }: { onClose: () => void }) {
   }, []);
 
   return (
-    <div className="w-full h-full fixed top-0 left-0 z-50 pointer-events-auto">
+    <div className="w-full h-full absolute top-0 left-0 z-[999] pointer-events-auto">
       {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-2 right-2 z-50 text-white text-2xl font-bold hover:text-red-600"
+        className="absolute top-2 right-2 z-[9999] text-white text-2xl font-bold hover:text-red-600"
       >
         ×
       </button>
 
       {/* Emulator Container */}
-      <div ref={containerRef} id="dos" className="w-full h-full" />
+      <div
+        ref={containerRef}
+        id="dos"
+        className="w-full h-full absolute z-[9998] top-0 left-0"
+      />
     </div>
   );
 }
